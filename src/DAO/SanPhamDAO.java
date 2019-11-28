@@ -159,7 +159,7 @@ public class SanPhamDAO {
                    System.out.println("Ma san pham ton tai");
                    return;
                }
-        }
+    }
       String sql = "insert into sanpham ( MaSP , TenSP , SoLuong , DonGia , MaTheLoai , MaNCC ) values (?,?,?,?,?,?)";
    
      
@@ -211,6 +211,7 @@ public class SanPhamDAO {
       
         
     }
+      
     
     
     
