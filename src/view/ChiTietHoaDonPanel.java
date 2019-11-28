@@ -32,230 +32,222 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
 import ultity.ClassTableModel;
-
+import ultity.ConvertString;
 
 public class ChiTietHoaDonPanel extends javax.swing.JPanel {
+
     private InTroVe introve;
     private JTable table = new JTable();
     private ClassTableModel classTableModel = null;
-    private String[] ListColum={"Mã CTDH","Mã đon hàng","Mã sản phẩm","Số lượng ","Đơn giá  ","thành tiền"};
-    private TableRowSorter<TableModel> rowSorter=null;
-    private ArrayList<SanPhamDTO> DSSanPham=new ArrayList<>();
+    private String[] ListColum = {"Mã CTDH", "Mã đon hàng", "Mã sản phẩm", "Số lượng ", "Đơn giá  ", "thành tiền"};
+    private TableRowSorter<TableModel> rowSorter = null;
+    private ArrayList<SanPhamDTO> DSSanPham = new ArrayList<>();
     private String ThaoTac;
-    private ArrayList<ChiTietHoaDonDTO> listItem=ChiTietHoaDonBUS.getlist();
-    
-  //  private ArrayList<ChiTietHoaDonDTO> listCTHD= ChiTietHoaDonBUS.getlist();
-    private ChiTietHoaDonDTO CTHD_HienHanh=new ChiTietHoaDonDTO();
-     
-     
-     
- private  SanPhamDTO SanPham_HienHanh;
- 
- 
+    private ArrayList<ChiTietHoaDonDTO> listItem = ChiTietHoaDonBUS.getlist();
+
+    //  private ArrayList<ChiTietHoaDonDTO> listCTHD= ChiTietHoaDonBUS.getlist();
+    private ChiTietHoaDonDTO CTHD_HienHanh = new ChiTietHoaDonDTO();
+
+    private SanPhamDTO SanPham_HienHanh;
+
     public ChiTietHoaDonPanel() {
         initComponents();
         setView();
         setDataTable();
-       
-    }
-    public  ChiTietHoaDonPanel(int MaHD,InTroVe introve){
-    
-        this.introve=introve;
-         initComponents();
-         ArrayList<ChiTietHoaDonDTO> ds=ChiTietHoaDonBUS.getlist_TheoMaHD(MaHD);
-         setDataTable(ds);
-         setView();
-         setEventButton();
-         lbTieuDe.setText("Chi tiết hóa đơn : "+MaHD);
-         
-         
-         
-    }
-    
-   public  void setDataTable(){
-       listItem = ChiTietHoaDonBUS.getlist();
-       setDataTable(listItem);
-   } 
-    public  void setDataTable(ArrayList<ChiTietHoaDonDTO> listItem){
-        
-         
-         this.classTableModel = new ClassTableModel();
-          DefaultTableModel model = classTableModel.setTableChiTietHoaDon(listItem, ListColum);
-                   table = new JTable(model);    
-                   
-                   
-                    rowSorter = new TableRowSorter<>(table.getModel());
-        table.setRowSorter(rowSorter);
-        
-        table.getSelectionModel().addListSelectionListener(new ListSelectionListener(){
-                    @Override
-                    public void valueChanged(ListSelectionEvent event) {
-                        int vitri=table.getSelectedRow();
-                       
-                       ChiTietHoaDonDTO chitiethd=new ChiTietHoaDonDTO(listItem.get(vitri));
-                       
-                       CTHD_HienHanh=new ChiTietHoaDonDTO(chitiethd);
-                        SanPham_HienHanh=new SanPhamDTO(SanPhamBUS.getSP_TheoMa(chitiethd.getMaSP()));
-                        
-                          txMaCTHD.setText(CTHD_HienHanh.getMaCTHD()+"");
-                        txMaHD.setText(CTHD_HienHanh.getMaHD()+"");
-                        cbSanPham.setSelectedItem(SanPham_HienHanh.getMa_SP()+") "+SanPham_HienHanh.getTen_SP());
-                        txDonGia.setText(CTHD_HienHanh.getDongia()+"");
-                        txSL.setText(CTHD_HienHanh.getSL()+"");
-                        txThanhTien.setText(CTHD_HienHanh.getThanhtien()+"");
-                 
-                        
-                    
-                     }
 
-            
-            });
-         table.getTableHeader().setFont(new Font("Arrial",Font.BOLD,14));
-         table.getTableHeader().setPreferredSize(new Dimension(50, 50));
-         table.setRowHeight(50);
-         table.validate();
-         table.repaint();
-         
-         
-         JScrollPane scrollpane=new JScrollPane();
-         scrollpane.getViewport().add(table);
-         scrollpane.setPreferredSize(new Dimension(1100, 400));
-         pnView.removeAll();
-         pnView.setLayout(new BorderLayout());
-         pnView.add(scrollpane);
-         pnView.validate();
-         
-         pnView.repaint();
-         
-        
-         
-        
     }
-    public void setEventButton(){
+
+    public ChiTietHoaDonPanel(int MaHD, InTroVe introve) {
+
+        this.introve = introve;
+        initComponents();
+        ArrayList<ChiTietHoaDonDTO> ds = ChiTietHoaDonBUS.getlist_TheoMaHD(MaHD);
+        setDataTable(ds);
+        setView();
+        setEventButton();
+        lbTieuDe.setText("Chi tiết hóa đơn : " + MaHD);
+
+    }
+
+    public void setDataTable() {
+        listItem = ChiTietHoaDonBUS.getlist();
+        setDataTable(listItem);
+    }
+
+    public void setDataTable(ArrayList<ChiTietHoaDonDTO> listItem) {
+
+        this.classTableModel = new ClassTableModel();
+        DefaultTableModel model = classTableModel.setTableChiTietHoaDon(listItem, ListColum);
+        table = new JTable(model);
+
+        rowSorter = new TableRowSorter<>(table.getModel());
+        table.setRowSorter(rowSorter);
+
+        table.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
+            @Override
+            public void valueChanged(ListSelectionEvent event) {
+                int vitri = table.getSelectedRow();
+
+                ChiTietHoaDonDTO chitiethd = new ChiTietHoaDonDTO(listItem.get(vitri));
+
+                CTHD_HienHanh = new ChiTietHoaDonDTO(chitiethd);
+                SanPham_HienHanh = new SanPhamDTO(SanPhamBUS.getSP_TheoMa(chitiethd.getMaSP()));
+
+                txMaCTHD.setText(CTHD_HienHanh.getMaCTHD() + "");
+                txMaHD.setText(CTHD_HienHanh.getMaHD() + "");
+                cbSanPham.setSelectedItem(SanPham_HienHanh.getMa_SP() + ") " + SanPham_HienHanh.getTen_SP());
+                txDonGia.setText(CTHD_HienHanh.getDongia() + "");
+                txSL.setText(CTHD_HienHanh.getSL() + "");
+                txThanhTien.setText(CTHD_HienHanh.getThanhtien() + "");
+
+            }
+
+        });
+        table.getTableHeader().setFont(new Font("Arrial", Font.BOLD, 14));
+        table.getTableHeader().setPreferredSize(new Dimension(50, 50));
+        table.setRowHeight(50);
+        table.validate();
+        table.repaint();
+
+        JScrollPane scrollpane = new JScrollPane();
+        scrollpane.getViewport().add(table);
+        scrollpane.setPreferredSize(new Dimension(1100, 400));
+        pnView.removeAll();
+        pnView.setLayout(new BorderLayout());
+        pnView.add(scrollpane);
+        pnView.validate();
+
+        pnView.repaint();
+
+    }
+
+    public void setEventButton() {
         btTroVe.addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-              introve.trove();
+                introve.trove();
             }
         });
-        
-        
-        
+
         btXemDS.addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
                 lbTieuDe.setText("Danh sách Chi tiết Hóa Đơn");
-                  setDataTable(ChiTietHoaDonBUS.getlist());
-                
-               
+                setDataTable(ChiTietHoaDonBUS.getlist());
+
             }
         });
-        
+
         btXoa.addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                   int xacnhan =JOptionPane.showConfirmDialog(null, "Bạn có muốn xóa chi tiết hóa đơn này?"); //Thong báo xác nhận xóa 
-                   if(xacnhan==0){
-                       
-                     if(table.getSelectedRow() != -1 ){
-                         try {
-                              ChiTietHoaDonBUS.Delete(CTHD_HienHanh.getMaHD());
-                              int tongtien_cthd=ChiTietHoaDonBUS.TongCTHD(CTHD_HienHanh.getMaHD());
-                              HoaDonBUS.SuaHD_TongTien(CTHD_HienHanh.getMaHD(), tongtien_cthd);
-                              setDataTable();
-                         } catch (Exception ex) {
-                             System.out.println("loi btXoa CTHD");
-                         }
-                        
-                     }
-               
+                int xacnhan = JOptionPane.showConfirmDialog(null, "Bạn có muốn xóa chi tiết hóa đơn này?"); //Thong báo xác nhận xóa 
+                if (xacnhan == 0) {
+
+                    if (table.getSelectedRow() != -1) {
+                        try {
+                            ChiTietHoaDonBUS.Delete(CTHD_HienHanh.getMaHD());
+                            int tongtien_cthd = ChiTietHoaDonBUS.TongCTHD(CTHD_HienHanh.getMaHD());
+                            HoaDonBUS.SuaHD_TongTien(CTHD_HienHanh.getMaHD(), tongtien_cthd);
+                            setDataTable();
+                        } catch (Exception ex) {
+                            System.out.println("loi btXoa CTHD");
+                        }
+
+                    }
+
                 }
             }
         });
         btSua.addActionListener(new ActionListener() {
 
             @Override
-             public void actionPerformed(ActionEvent e) {
-                
-                  if(table.getSelectedRow() != -1){
-                     setDisableEdit();
-                     cbSanPham.setEnabled(true);
-                     txSL.setEditable(true);
-                     
-                     
-                    
-                     
-                     table.setEnabled(false);
+            public void actionPerformed(ActionEvent e) {
 
-                     btThem.setEnabled(   false);
-                     btSua.setEnabled(   false);
-                     btXoa.setEnabled(   false);
-                     
-                     ThaoTac="Sua";
-                  }
-             }
-         });
+                if (table.getSelectedRow() != -1) {
+                    setDisableEdit();
+                    cbSanPham.setEnabled(true);
+                    txSL.setEditable(true);
+
+                    table.setEnabled(false);
+
+                    btThem.setEnabled(false);
+                    btSua.setEnabled(false);
+                    btXoa.setEnabled(false);
+
+                    ThaoTac = "Sua";
+                }
+            }
+        });
         btThem.addActionListener(new ActionListener() {
 
             @Override
-             public void actionPerformed(ActionEvent e) {
-                
-                  if(table.getSelectedRow() != -1){
-                     setDisableEdit();
-                     cbSanPham.setEnabled(true);
-                     txSL.setEditable(true);
-                     
-                     
-                    
-                     
-                     table.setEnabled(false);
+            public void actionPerformed(ActionEvent e) {
 
-                     btThem.setEnabled(   false);
-                     btSua.setEnabled(   false);
-                     btXoa.setEnabled(   false);
-                     
-                     ThaoTac="Sua";
-                  }
-             }
-         });
-        
-        
-        
-      
+                if (table.getSelectedRow() != -1) {
+                    setDisableEdit();
+                    cbSanPham.setEnabled(true);
+                    txSL.setEditable(true);
+
+                    table.setEnabled(false);
+
+                    btThem.setEnabled(false);
+                    btSua.setEnabled(false);
+                    btXoa.setEnabled(false);
+
+                    ThaoTac = "Sua";
+                }
+            }
+        });
+
+        cbSanPham.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ConvertString convert=new ConvertString();
+                int masanpham=convert.getNumbers((String) cbSanPham.getSelectedItem());
+                SanPhamDTO sanpham_CB=SanPhamBUS.getSP_TheoMa(masanpham);
+                txDonGia.setText(sanpham_CB.getGia()+"");
+                int tong=sanpham_CB.getGia()*Integer.valueOf(txSL.getText());
+                txThanhTien.setText(tong+"");
+            }
+        });
+
     }
-    public  void setView(){
-         for (SanPhamDTO sanpham : DSSanPham) {
-            cbSanPham.addItem(sanpham.getMa_SP()+") "+sanpham.getTen_SP());
+
+    public void setView() {
+        for (SanPhamDTO sanpham : DSSanPham) {
+            cbSanPham.addItem(sanpham.getMa_SP() + ") " + sanpham.getTen_SP());
         }
-        DSSanPham=SanPhamBUS.getList();
+        DSSanPham = SanPhamBUS.getList();
         for (SanPhamDTO sp : DSSanPham) {
-            cbSanPham.addItem(sp.getMa_SP()+") "+sp.getTen_SP());
+            cbSanPham.addItem(sp.getMa_SP() + ") " + sp.getTen_SP());
         }
         setDisableEdit();
-        
-    }
-    public void setDisableEdit(){
-         txMaCTHD.setEditable(false);
-         txMaHD.setEditable(false);
-         cbSanPham.setEditable(false);
-         txDonGia.setEditable(false);
-         txSL.setEditable(false);
-         txThanhTien.setEditable(false);
-    }
-     public void setEnableEdit(){
-         txMaCTHD.setEditable(true);
-         txMaHD.setEditable(true);
-         cbSanPham.setEditable(true);
-         txDonGia.setEditable(true);
-         txSL.setEditable(true);
-         txThanhTien.setEditable(true);
-    }
-    
 
-   
+    }
+
+    public void setDisableEdit() {
+        txMaCTHD.setEditable(false);
+        txMaHD.setEditable(false);
+        cbSanPham.setEditable(false);
+        txDonGia.setEditable(false);
+        txSL.setEditable(false);
+        txThanhTien.setEditable(false);
+    }
+
+    public void setEnableEdit() {
+        txMaCTHD.setEditable(true);
+        txMaHD.setEditable(true);
+        cbSanPham.setEditable(true);
+        txDonGia.setEditable(true);
+        txSL.setEditable(true);
+        txThanhTien.setEditable(true);
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
