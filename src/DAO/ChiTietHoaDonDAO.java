@@ -207,6 +207,41 @@ public class ChiTietHoaDonDAO {
          }
           return tongcthd;
      }
+     public static int  Tim_MaCTHD_Max() {
+       
+        try {
+         
+             Connection cons= DBConnect.getConnection();
+        String sql="select * from cthd order by MaCTHD limit 1";
+        
+        
+        
+                        ChiTietHoaDonDTO chitiet=new  ChiTietHoaDonDTO();
+
+            PreparedStatement ps= cons.prepareCall(sql);
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+                
+                chitiet.setMaCTHD(rs.getInt(1)); 
+                chitiet.setMaHD(rs.getInt(2)); 
+                chitiet.setMaSP(rs.getInt(3)); 
+                chitiet.setSL(rs.getInt(4)); 
+                chitiet.setDongia(rs.getInt(5)); 
+                chitiet.setThanhtien(rs.getInt(6));
+              
+                
+            }
+            ps.close();
+            rs.close();
+            cons.close();
+         
+            return chitiet.getMaCTHD();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            System.out.println("Loi chi tiet hoa don get max ma cthd");
+        }
+        return 1;
+    }
      public static void main(String[] args) {
         ChiTietHoaDonDAO dao=new ChiTietHoaDonDAO();
         dao.getlist();

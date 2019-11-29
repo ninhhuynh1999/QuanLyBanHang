@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+<Form version="1.9" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
   <Properties>
     <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
       <Dimension value="[930, 592]"/>
@@ -53,8 +53,8 @@
                       <Component id="pnTieuDe" max="32767" attributes="0"/>
                       <Group type="102" attributes="0">
                           <Component id="pnThongTin" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
-                          <Component id="pnChucNang" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="pnTimKiem" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
@@ -72,13 +72,20 @@
               <Group type="102" attributes="0">
                   <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
                   <Component id="pnTieuDe" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="pnChucNang" max="32767" attributes="0"/>
-                      <Component id="pnThongTin" max="32767" attributes="0"/>
-                      <Component id="pnTimKiem" alignment="0" min="-2" max="-2" attributes="0"/>
-                  </Group>
                   <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="pnTimKiem" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="119" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="pnThongTin" max="32767" attributes="0"/>
+                              <Component id="jPanel1" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
                   <Component id="pnView" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -217,8 +224,8 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="txMaHD" min="-2" pref="200" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="cbMaHD" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -226,14 +233,14 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="txMaHD" pref="27" max="32767" attributes="0"/>
+                          <Component id="cbMaHD" pref="27" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JTextField" name="txMaHD">
+                <Component class="javax.swing.JComboBox" name="cbMaHD">
                 </Component>
               </SubComponents>
             </Container>
@@ -422,98 +429,6 @@
             </Container>
           </SubComponents>
         </Container>
-        <Container class="javax.swing.JPanel" name="pnChucNang">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-              <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                <TitledBorder title="Ch&#x1ee9;c n&#x103;ng">
-                  <Font PropertyName="font" name="Times New Roman" size="15" style="0"/>
-                  <Color PropertyName="color" blue="ff" green="33" red="33" type="rgb"/>
-                </TitledBorder>
-              </Border>
-            </Property>
-          </Properties>
-
-          <Layout>
-            <DimensionLayout dim="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="btTroVe" alignment="1" min="-2" pref="120" max="-2" attributes="0"/>
-                          <Component id="btXemDS" min="-2" pref="120" max="-2" attributes="0"/>
-                          <Component id="btXoa" min="-2" pref="120" max="-2" attributes="0"/>
-                          <Component id="btSua" min="-2" pref="120" max="-2" attributes="0"/>
-                          <Component id="btThem" min="-2" pref="120" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-            </DimensionLayout>
-            <DimensionLayout dim="1">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btThem" min="-2" pref="40" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                      <Component id="btSua" min="-2" pref="40" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                      <Component id="btXoa" min="-2" pref="40" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                      <Component id="btXemDS" min="-2" pref="40" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                      <Component id="btTroVe" min="-2" pref="40" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-            </DimensionLayout>
-          </Layout>
-          <SubComponents>
-            <Component class="javax.swing.JButton" name="btThem">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Times New Roman" size="15" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Th&#xea;m CTHD"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JButton" name="btSua">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Times New Roman" size="15" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="S&#x1eed;a CTHD"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JButton" name="btXoa">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Times New Roman" size="15" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="X&#xf3;a CTHD"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JButton" name="btXemDS">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Times New Roman" size="13" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Xem DS CTHD"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JButton" name="btTroVe">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Times New Roman" size="15" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Tr&#x1edf; v&#x1ec1; H&#x110;"/>
-              </Properties>
-            </Component>
-          </SubComponents>
-        </Container>
         <Container class="javax.swing.JPanel" name="pnTieuDe">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -525,7 +440,7 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="lbTieuDe" pref="982" max="32767" attributes="0"/>
+                      <Component id="lbTieuDe" max="32767" attributes="0"/>
                       <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -556,12 +471,12 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="994" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="265" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="286" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -587,7 +502,7 @@
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="btTImKiem" max="32767" attributes="0"/>
+                          <Component id="btTImKiem" pref="141" max="32767" attributes="0"/>
                           <Component id="txTimKiem" alignment="1" max="32767" attributes="0"/>
                           <Component id="cbTimKiem" alignment="1" max="32767" attributes="0"/>
                       </Group>
@@ -622,6 +537,121 @@
                 <Property name="text" type="java.lang.String" value="T&#xec;m"/>
               </Properties>
             </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="jPanel1">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+          </Properties>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="pnChucNang" min="-2" pref="185" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="23" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="0" pref="13" max="32767" attributes="0"/>
+                      <Component id="pnChucNang" min="-2" pref="330" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Container class="javax.swing.JPanel" name="pnChucNang">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                    <TitledBorder title="Ch&#x1ee9;c n&#x103;ng">
+                      <Font PropertyName="font" name="Times New Roman" size="15" style="0"/>
+                      <Color PropertyName="color" blue="ff" green="33" red="33" type="rgb"/>
+                    </TitledBorder>
+                  </Border>
+                </Property>
+              </Properties>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+                <Property name="useNullLayout" type="boolean" value="true"/>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JButton" name="btThem">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Times New Roman" size="15" style="0"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Th&#xea;m CTHD"/>
+                  </Properties>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="30" y="30" width="120" height="40"/>
+                    </Constraint>
+                  </Constraints>
+                </Component>
+                <Component class="javax.swing.JButton" name="btSua">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Times New Roman" size="15" style="0"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="S&#x1eed;a CTHD"/>
+                    <Property name="alignmentY" type="float" value="1.0"/>
+                  </Properties>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="30" y="90" width="120" height="40"/>
+                    </Constraint>
+                  </Constraints>
+                </Component>
+                <Component class="javax.swing.JButton" name="btXoa">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Times New Roman" size="15" style="0"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="X&#xf3;a CTHD"/>
+                  </Properties>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="30" y="150" width="120" height="40"/>
+                    </Constraint>
+                  </Constraints>
+                </Component>
+                <Component class="javax.swing.JButton" name="btXemDS">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Times New Roman" size="13" style="0"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Xem DS CTHD"/>
+                  </Properties>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="30" y="210" width="120" height="40"/>
+                    </Constraint>
+                  </Constraints>
+                </Component>
+                <Component class="javax.swing.JButton" name="btTroVe">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Times New Roman" size="15" style="0"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Tr&#x1edf; v&#x1ec1; H&#x110;"/>
+                  </Properties>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="30" y="270" width="120" height="40"/>
+                    </Constraint>
+                  </Constraints>
+                </Component>
+              </SubComponents>
+            </Container>
           </SubComponents>
         </Container>
       </SubComponents>

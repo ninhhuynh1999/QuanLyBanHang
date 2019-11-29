@@ -244,6 +244,9 @@ public class HoaDonPanel extends javax.swing.JPanel implements InTroVe{
              @Override
              public void actionPerformed(ActionEvent e) {
                 EnableEdit();
+                txGiamGia.setEditable(false);
+                txTongtien.setEditable(false);
+                txThanhtOAN.setEditable(false);
                 txMaHD.setEditable(false);
 //                txTongtien.setEditable(false);
 //                txGiamGia.setEditable(false);
@@ -300,11 +303,19 @@ public class HoaDonPanel extends javax.swing.JPanel implements InTroVe{
              @Override
              public void actionPerformed(ActionEvent e) {
                 HoaDonDTO hoadon_sua=new HoaDonDTO();
+                int tongtien=0;
+                int thanhtoan=0;
+                int giamgia=0;
+                 try {
+                       tongtien=Integer.parseInt(txTongtien.getText());
+                 thanhtoan=Integer.parseInt(txThanhtOAN.getText());
+                 giamgia=Integer.parseInt(txGiamGia.getText());
+                 } catch (Exception ex) {
+                     System.out.println("loi nul");
+                 }
                 int mahd=Integer.parseInt(txMaHD.getText());
                
-                int tongtien=Integer.parseInt(txTongtien.getText());
-                int thanhtoan=Integer.parseInt(txThanhtOAN.getText());
-                int giamgia=Integer.parseInt(txGiamGia.getText());
+                
                 int makh=ConvertString.getNumbers((String) cbMaKH.getSelectedItem());
                 int manv=ConvertString.getNumbers((String) cbMaNV.getSelectedItem());
                 

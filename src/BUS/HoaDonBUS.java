@@ -45,6 +45,16 @@ public class HoaDonBUS {
         }
         return max;
     }
+    public static HoaDonDTO TimHoaDon(int MaHD){
+       
+        ArrayList<HoaDonDTO> hd= getList();
+        for (HoaDonDTO hoadon : hd) {
+            if(hoadon.getMaHD() == MaHD) {
+               return hoadon;
+            }
+        }
+        return null;
+    }
     public static  void SuaHD_TongTien(int MaHD,int TongTien){
         HoaDonDAO.SuaHD_TongTien(MaHD, TongTien);
       

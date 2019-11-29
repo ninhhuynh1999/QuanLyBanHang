@@ -51,6 +51,10 @@ public class ChiTietHoaDonBUS {
         }
         return null;
      }
+      public static int Tim_MaCTHD_Max(){
+        
+        return ChiTietHoaDonDAO.Tim_MaCTHD_Max()    ;
+     }
       public static  int TongCTHD(int MaHD){
          return ChiTietHoaDonDAO.TongCTHD(MaHD);
      }
