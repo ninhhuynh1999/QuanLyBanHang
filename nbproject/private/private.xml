@@ -3,11 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/ninhh/Desktop/Java/QuanLyTapHoa/src/BUS/SanPhamBUS.java</file>
+            <file>file:/C:/Users/ninhh/Desktop/Java/QuanLyTapHoa/src/view/QuanLyHoaDon.java</file>
             <file>file:/C:/Users/ninhh/Desktop/Java/QuanLyTapHoa/src/view/ChiTietHoaDonPanel.java</file>
-            <file>file:/C:/Users/ninhh/Desktop/Java/QuanLyTapHoa/src/DTO/SanPhamDTO.java</file>
-            <file>file:/C:/Users/ninhh/Desktop/Java/QuanLyTapHoa/src/ultity/ConvertString.java</file>
-            <file>file:/C:/Users/ninhh/Desktop/Java/QuanLyTapHoa/src/DAO/SanPhamDAO.java</file>
+            <file>file:/C:/Users/ninhh/Desktop/Java/QuanLyTapHoa/src/view/HoaDonPanel.java</file>
+            <file>file:/C:/Users/ninhh/Desktop/Java/QuanLyTapHoa/src/BUS/ChuyenManHinhController.java</file>
+            <file>file:/C:/Users/ninhh/Desktop/Java/QuanLyTapHoa/src/ultity/ClassTableModel.java</file>
         </group>
     </open-files>
 </project-private>

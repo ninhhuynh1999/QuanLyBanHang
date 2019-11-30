@@ -19,6 +19,7 @@ import javax.swing.JPanel;
 import view.ChiTietHoaDonPanel;
 import view.HoaDonPanel;
 import view.PhieuNhapPanel;
+import view.QuanLyHoaDon;
 import view.SanPhamPanel;
 import view.TestPanel;
 import view.ThongTinKhacPanel;
@@ -76,7 +77,7 @@ public class ChuyenManHinhController {
                     node=new  SanPhamPanel();
                     break;
                 case "HoaDon":
-                    node=new HoaDonPanel();
+                    node=new QuanLyHoaDon();
                     break;
                 case "PhieuNhap":
                     node = new PhieuNhapPanel();
